@@ -1,0 +1,125 @@
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+.qtee-colors {
+	width:100%;
+	height: 20px;
+	background-color: red;
+	background-image:
+		linear-gradient(
+			to right, 
+			#e5007d,
+			#e5007d 10.43%,
+			#312783 10.43%,
+			#312783 14.93%,
+			#009fe3 14.93%,
+			#009fe3 25.77%,
+			#009641 25.77%,
+			#009641 29.24%,
+			#ffed00 29.24%,
+			#ffed00 46.63%,
+			#009641 46.63%,
+			#009641 67.49%,
+			#005b38 67.49%,
+			#005b38 70.96%,
+			#ef7b00 70.96%,
+			#ef7b00 80.37%,
+			#e30613 80.37%,
+			#e30613 84.25%,
+			#e5007d 84.25%,
+			#e5007d 100%
+		);
+}
+
+.qtee-colors.top{
+	margin-top:51px;
+}
+
+.text-vcenter {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+.text-vcenter h1 {
+	font-size: 4.5em;
+	font-weight: 700;
+	margin: 0;
+	padding: 0;
+}
+#qtee-logo{
+	margin: 0 auto;
+}
+
+#home{
+	background: url(../img/pears.png) no-repeat center center;
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#Consumer{
+	background-color: #009fe3;
+	color: #ffffff
+}
+
+#Consumer .glyphicon{
+	border: 2px solid #FFFFFF;
+	border-radius: 50%;
+	display: inline-block;
+	font-size:60px;
+	height:140px;
+	text-align: center;
+	vertical-align:middle;
+	width:140px;
+	line-height:140px;
+}
+
+#Grower{
+	background-color: #009641;
+	color: #ffffff;
+}
+
+#Grower .glyphicon{
+	border: 2px solid #FFFFFF;
+	border-radius: 50%;
+	display: inline-block;
+	font-size:60px;
+	height:140px;
+	text-align: center;
+	vertical-align:middle;
+	width:140px;
+	line-height:140px;
+}
+
+#Grower a{
+	color:white;
+}
+
+#contact{
+	background-color: #009fe3;
+	color: #ffffff;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width:768px) {
+
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width:1200px) {
+
+}
