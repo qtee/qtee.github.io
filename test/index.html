@@ -38,7 +38,8 @@
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#Consumer">Consumer<span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
+							<li><a href="#Consumer">Consumer</a></li>
 							<li><a href="#Grower">Grower</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
@@ -160,32 +161,52 @@
 				<div class="col-sm-12 text-center">
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-6 form-group">
-					<input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+			<p id="formResponse"><?php if($error) { echo($error); } ?></p>
+			<form id="contactform" name="contactform" method="post" action="">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<input class="form-control" id="name" name="name" placeholder="Name" type="text" required autofocus />
+						<input id="lastname" name="lastname" placeholder="lastnameName" type="text"/>
+					</div>
+					<div class="col-sm-6 form-group" >
+						<input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+					</div>
 				</div>
-				<div class="col-sm-6 form-group" >
-					<input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+				<div class="row">
+					<div class="col-sm-12 text-center form-group">
+						<textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+					</div>	
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12 text-center form-group">
-					<textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
-				</div>	
-			</div>
-			<div class="row">
-				<div class="col-md-12 text-center form-group">
-					<button class="btn btn-primary" type="submit">Submit</button>
+				<div class="row">
+					<div class="col-md-12 text-center form-group">
+						<button class="btn btn-primary" type="submit">Submit</button>
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	</div>
 	<!-- /CONTACT Section -->
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		$("#contactform").submit(function() {
+			$.post('sendemail.php', { lastname: $('#lastname').val(), email: $('#email').val(), name: $('#name').val(), message: $('#message').val() }, function(data) {
+				$("#formResponse").html(data).fadeIn('100');
+				$("#name").val('');
+				$("#email").val('');
+				$("#message").val('');
+			}, 'text');
+			return false;
+		});
+	});
+	</script>
 
 	
 	<div class="qtee-colors"></div>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
